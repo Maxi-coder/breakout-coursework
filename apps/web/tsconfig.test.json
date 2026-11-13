@@ -2,13 +2,14 @@
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    "module": "CommonJS",
     "skipLibCheck": true,
-    "moduleResolution": "Bundler",
-    "verbatimModuleSyntax": true,
+    "moduleResolution": "Node",
+    "verbatimModuleSyntax": false,
+    "esModuleInterop": true,
     "strict": true,
     "jsx": "react-jsx",
-    "types": ["jest", "@testing-library/jest-dom"]
+    "types": ["jest", "@testing-library/jest-dom", "node"]
   },
   "include": ["src"]
 }

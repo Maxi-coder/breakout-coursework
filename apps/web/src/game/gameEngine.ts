@@ -58,6 +58,7 @@ function createBricks(pattern: string[]): Brick[] {
   return pattern.flatMap((row, rowIndex) =>
     row.split('').flatMap((cell, columnIndex) => {
       if (cell !== '1') return []
+
       return [{
         id: `${rowIndex}-${columnIndex}`,
         x: 24 + columnIndex * (brickWidth + brickGap),
@@ -95,6 +96,7 @@ export function movePaddle(state: GameState, x: number): GameState {
   if (state.status === 'paused' || state.status === 'lost' || state.status === 'won' || state.status === 'level-complete') return state
   const halfWidth = PADDLE_WIDTH / 2
   const paddleX = Math.max(halfWidth, Math.min(BOARD_WIDTH - halfWidth, x))
+
   return {
     ...state,
     paddle: { x: paddleX },
@@ -115,12 +117,14 @@ export function launchGame(state: GameState): GameState {
     }
   }
   if (state.status === 'paused') return { ...state, status: 'running' }
+
   return state
 }
 
 export function togglePause(state: GameState): GameState {
   if (state.status === 'running') return { ...state, status: 'paused' }
   if (state.status === 'paused') return { ...state, status: 'running' }
+
   return state
 }
 
@@ -129,6 +133,7 @@ function overlapsBrick(ball: Ball, brick: Brick): boolean {
   const nearestY = Math.max(brick.y, Math.min(ball.y, brick.y + brick.height))
   const dx = ball.x - nearestX
   const dy = ball.y - nearestY
+
   return dx * dx + dy * dy <= ball.radius * ball.radius
 }
 
@@ -144,6 +149,7 @@ export function advanceGame(state: GameState, totalLevels = 3): GameState {
 
   if (ball.y - ball.radius > BOARD_HEIGHT) {
     const lives = Math.max(0, state.lives - 1)
+
     return {
       ...state,
       ball: createBall(state.paddle.x),

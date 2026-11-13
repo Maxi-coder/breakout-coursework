@@ -1,6 +1,7 @@
+import { GameButton, StatusStat } from '@breakout/ui-components'
 import { useEffect, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { GameButton, StatusStat } from '@breakout/ui-components'
+
 import GameBoard from '../components/GameBoard'
 import { getLevel, levels } from '../data/levels'
 import {
@@ -32,6 +33,7 @@ export default function GamePage() {
     }
 
     frameId = window.requestAnimationFrame(tick)
+
     return () => window.cancelAnimationFrame(frameId)
   }, [isRunning])
 
@@ -52,6 +54,7 @@ export default function GamePage() {
     }
 
     window.addEventListener('keydown', handleKeyDown)
+
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [])
 
@@ -59,6 +62,7 @@ export default function GamePage() {
     setGame((current) => {
       const nextLevel = levels[current.levelIndex + 1]
       if (!nextLevel) return current
+
       return createGameState(nextLevel, current.levelIndex + 1, current.score, current.lives)
     })
   }

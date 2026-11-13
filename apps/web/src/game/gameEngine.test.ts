@@ -1,4 +1,3 @@
-import { levels } from '../data/levels'
 import {
   advanceGame,
   BALL_RADIUS,
@@ -13,6 +12,7 @@ import {
   togglePause,
   type GameState,
 } from './gameEngine'
+import { levels } from '../data/levels'
 
 function withBall(state: GameState, x: number, y: number, vx: number, vy: number): GameState {
   return { ...state, status: 'running', ball: { ...state.ball, x, y, vx, vy } }

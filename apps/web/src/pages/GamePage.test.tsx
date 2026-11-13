@@ -1,6 +1,7 @@
-import { fireEvent, render, screen } from '@testing-library/react'
 import { jest } from '@jest/globals'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
+
 import GamePage from './GamePage'
 
 let requestFrameDescriptor: PropertyDescriptor | undefined

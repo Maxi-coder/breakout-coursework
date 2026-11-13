@@ -32,5 +32,6 @@ export const levels: Level[] = [
 
 export function getLevel(id: string | undefined): Level | undefined {
   const numericId = Number(id)
+
   return levels.find((level) => level.id === numericId)
 }

@@ -1,4 +1,5 @@
 import type { PointerEvent } from 'react'
+
 import {
   BALL_RADIUS,
   BOARD_HEIGHT,
