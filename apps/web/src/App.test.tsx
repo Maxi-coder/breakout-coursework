@@ -8,11 +8,12 @@ function renderAt(path: string) {
 }
 
 describe('маршруты приложения', () => {
-  it('показывает обзор и открывает игровой макет по ссылке', () => {
+  it('показывает обзор и открывает игру по ссылке', () => {
     renderAt('/')
     expect(screen.getByRole('heading', { name: 'Разработка игры «Брейкаут»' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'Открыть страницу игры' }))
-    expect(screen.getByRole('heading', { name: 'Страница игры' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Игра «Брейкаут»' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Запустить мяч' })).toBeInTheDocument()
   })
 
   it('показывает существующий уровень и неизвестный маршрут', () => {

@@ -23,7 +23,7 @@ export default function LevelPage() {
           <p className="eyebrow">{level.difficulty}</p>
           <h1>{level.name}</h1>
           <p>{level.description}</p>
-          <Link className="game-button" to="/game">Перейти к странице игры</Link>
+          <Link className="game-button" to={`/game?levelId=${level.id}`}>Играть на этом уровне</Link>
         </section>
         <section className="level-preview" aria-labelledby="level-preview-title">
           <h2 id="level-preview-title">Схема блоков</h2>
