@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
 import { StatusStat } from '@breakout/ui-components'
+import { Link } from 'react-router-dom'
+
 import GameBoardPreview from '../components/GameBoardPreview'
 import { levels } from '../data/levels'
 

@@ -1,5 +1,6 @@
-import { fireEvent, render, screen } from '@testing-library/react'
 import { jest } from '@jest/globals'
+import { fireEvent, render, screen } from '@testing-library/react'
+
 import { GameButton } from './GameButton'
 
 describe('GameButton', () => {

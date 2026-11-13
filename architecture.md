@@ -26,7 +26,6 @@ apps/web/
   src/
     main.tsx
     App.tsx
-    vite-env.d.ts
     styles/
       app.css
     data/

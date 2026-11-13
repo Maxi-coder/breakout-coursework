@@ -1,5 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom'
 import { GameButton } from '@breakout/ui-components'
+import { Link, useNavigate } from 'react-router-dom'
+
 import GameBoardPreview from '../components/GameBoardPreview'
 import { levels } from '../data/levels'
 

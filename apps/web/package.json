@@ -8,8 +8,8 @@
     "build": "npm run build --workspace @breakout/ui-components && tsc -b && vite build",
     "lint": "eslint . --max-warnings=0",
     "lint:fix": "eslint . --fix",
-    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js",
-    "test:coverage": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --coverage"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@breakout/ui-components": "file:../../packages/ui-components",
@@ -27,7 +27,10 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.36.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
     "globals": "^17.13.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.2.0",
